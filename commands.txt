@@ -1,0 +1,45 @@
+Types of commands recognized by samples:
+------------------
+Arithmetic:      
+        +  add
+        -  Subtract
+        *  multiply
+        /  divide
+        ,  error. no commas allowed!  
+----------------------------        
+    meta tags:    
+        ;  Comment goes to output
+        @  Comment ignored and dropped
+        &  execute macro  
+        .  define macro  
+        B  which random number file to use
+        F  Pass it to Csound 2nd pass
+------------------------        
+    commands that affect all notes:        
+        A  OverallVolume  
+        L  Literal - pass it on to csound csd file without modification
+        N  channel definition - done once for each channel
+        M  voice from McGill.dat file - done once for each channel - it's the instrument to play samples
+        Q  Tempo function table for the whole piece
+        P  randomization algorithm - several different ones are available
+        X  write this line to xref.txt - useful for debugging
+        Y  Lyrics for LilyPond - not sure if this still works
+        Z  perterb start time - a little early, a little late, you never know. 
+----------------------        
+    Individual note characteristics:        
+        Start time is a result of adding the Durations in this channel leading up to the current note - a double. All others are integers
+        C  Channel - what channel is it - by default channel 1 is used to set the overall volume function for the whole piece.
+        T  Tone in scale - currently a number from 0 to 215
+        O  Octave
+        D  Duration of note  
+        H  Hold note for duration 
+        E  left and right Envelope  
+        W  right channel envelope (if different from left)
+        V  Velocity, Volume  
+        I  intensity - amplitude multiplicand in orchestra - usually static for the whole piece
+        U  upsample - pick the wrong sample for this note on purpose to affect the timbre
+        G  glissando - three are independent
+        J  2nd glissando  
+        K  3rd glissando  
+        R  Random chance of hearing or not r16 is always, r0 is never
+        S  Stereo location 8 is middle, less than 8 is to the left, more than 8 is to the right        
