@@ -5,7 +5,7 @@ This is a repository for samples, a front-end to Csound that is designed for sev
 4. Indeterminacy is encouraged. There are several simple randomization methodologies that can be used.
 5. The syntax uses the concept of a channel with notes as the primary musical element. Each channel has many notes, and there can be up to 16 or so channels. Each note has many characteristics, including pitch (t), octave (o), loudness (v), stereo position (s), envelopes for the right (e) and left (w) channel, duration (d) until the next note, hold (h) duration, and others. All the supported commands are listed in the file commands.txt.
 
-My use of the program is primarily to create lists of lists of lists of notes, and switch between lists using one of several different random algorithms. 
+If you are interested in trying it, you need to compile samples.pas with Lazarus, the open source Pascal compiler. I originally wrote the program for Borland Turbo Pascal, which died a death a long time ago. Fortunately Lazarus can accept 99.9% of Turbo Pascal syntax, so I was able to migrate. Once you compile the code, I would recommend you study csnow.bat and csnow.sh for DOS or Linux for an understanding of what it's looking for. I use the filetype of .mac for my source code. The shells take a file name and add the right filetype to that name and send it to samples.exe (or the linux equivalent.) If the program runs, you should find a file with the filetype of .csd, which is input to csound. 
 
 The program takes an input text file and outputs a text file that Csound recognizes as a .csd file, including both an orchestra and a score. It also writes a .csv file for input to analytical tools to confirm that the desired tuning is being used. 
 
@@ -14,3 +14,5 @@ To be effective, the program needs sample files. This repository includes sample
 The code has been modified over the years to support my compositional directions. I've been the only user since I started some time in 1990. Error handling is not good. I hope to put up an example file that will successfully produce some music, but that's not available today. 
 
 Examples of what the program can produce are available on my web site <a href="http://ripnread.com/sample-page/code/">here.</a> 
+
+My use of the program is primarily to create lists of lists of lists of notes, and switch between lists using one of several different random algorithms. 
